@@ -1,9 +1,9 @@
 var csv = require("fast-csv");
-var path = "contoh_data.csv";
+var path = "contoh_data_1.csv";
 var redis = require('redis');
 var client = redis.createClient(); //alternative createCient(port,host)
 
-client.select(0, function(err,res){
+client.select(1, function(err,res){
   // do nothing
 });
 
@@ -17,10 +17,10 @@ csv
      if(data["No"] < 15){
          var d = data;
          var x = {
-           "Guru/Teacher" : d["Guru/Teacher"],
-           "Kelas/Class" : d["Kelas/Class"],
-           "Murid/Pupils" : d["Murid/Pupils"],
-           "Sekolah/School" : d["Sekolah/School"],
+           "Teacher" : d["Teacher"],
+           "Class" : d["Class"],
+           "Pupils" : d["Pupils"],
+           "School" : d["School"],
              
          };//d["No"]+","+d["Guru/Teacher"]+",'"+d["Kecamatan "]+"',"+d["Kelas/Class"]+","+d["Murid/Pupils"]+","+d["Sekolah/School"]+");";
          client.hmset("id-"+data["No"],x);
@@ -30,7 +30,7 @@ csv
         var x = {};
 		
 		for(var k in d){
-			if(k != "Guru/Teacher"){
+			if(k != "Teacher"){
 				x[k] = d[k];
 			}
 		}
