@@ -17,10 +17,10 @@ csv
      if(data["No"] < 15){
          var d = data;
          var x = {
-           "Guru/Teacher" : d["Guru/Teacher"],
-           "Kelas/Class" : d["Kelas/Class"],
-           "Murid/Pupils" : d["Murid/Pupils"],
-           "Sekolah/School" : d["Sekolah/School"],
+           "Guru" : d["Guru"],
+           "Class" : d["Class"],
+           "Murid" : d["Murid"],
+           "School" : d["School"],
              
          };//d["No"]+","+d["Guru/Teacher"]+",'"+d["Kecamatan "]+"',"+d["Kelas/Class"]+","+d["Murid/Pupils"]+","+d["Sekolah/School"]+");";
          client.hmset("id-"+data["No"],x);
