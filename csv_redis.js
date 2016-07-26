@@ -30,7 +30,7 @@ csv
         var x = {};
 		
 		for(var k in d){
-			if(k != "Guru/Teacher"){
+			if(k != "Guru"){
 				x[k] = d[k];
 			}
 		}
