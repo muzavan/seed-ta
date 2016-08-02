@@ -17,9 +17,9 @@ csv
      if(data["No"] < 15){
          var d = data;
          var x = {
-           "Teacher" : d["Teacher"],
+           "Pengajar" : d["Pengajar"],
            "Class" : d["Class"],
-           "Pupils" : d["Pupils"],
+           "Siswa" : d["Siswa"],
            "School" : d["School"],
              
          };//d["No"]+","+d["Guru/Teacher"]+",'"+d["Kecamatan "]+"',"+d["Kelas/Class"]+","+d["Murid/Pupils"]+","+d["Sekolah/School"]+");";
@@ -30,7 +30,7 @@ csv
         var x = {};
 		
 		for(var k in d){
-			if(k != "Teacher"){
+			if(k != "Pengajar"){
 				x[k] = d[k];
 			}
 		}
