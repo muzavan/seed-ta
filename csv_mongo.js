@@ -15,6 +15,8 @@ client.connect(url,function(err,db){
         csv
         .fromPath(path,{headers : true, delimiter : ';'})
         .on("data", function(data){
+			data["posisi"] = {"kota" : "sumedang","provinsi" : "jawa barat","kecamatan" : data["Kecamatan"]};
+			delete data["Kecamatan"];
             documents.push(data);
         })
         .on("end", function(){
