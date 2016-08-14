@@ -15,7 +15,9 @@ client.connect(url,function(err,db){
         csv
         .fromPath(path,{headers : true, delimiter : ';'})
         .on("data", function(data){
-			data["Posisi"] = {"Kota" : "Sumedang","Provinsi" : "Jawa Barat","Kecamatan" : data["Kecamatan"],"Luas Kecamatan" : data["Kecamatan"].length};
+			data["Posisi"] = {"Kota" : "Sumedang","Provinsi" : "Jawa Barat","Kecamatan" : data["Kecamatan"],"Luas_Kecamatan" : data["Kecamatan"].length};
+            data["Guru"] = parseInt(data["Guru"]);
+            data["Murid"] = parseInt(data["Murid"]);
 			delete data["Kecamatan"];
             documents.push(data);
         })
